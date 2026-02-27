@@ -2,7 +2,7 @@ import { isCountryFavorite } from "./localStorageService.js";
 
 const getCountries = async () => {
     try {
-        const res = await fetch("https://restcountries.com/v3.1/all");
+        const res = await fetch("https://restcountries.com/v3.1/all?fields=name,flags");
         return await res.json();
     } catch (error) {
         console.log(error);
@@ -38,7 +38,7 @@ const searchCountry = (country, showFavorites = false) => {
             if (showFavorites) {
                 console.log(
                     "IN FAVORITES FILTERING",
-                    wordLower.includes(countryName) && isCountryFavorite(word.name.common)
+                    wordLower.includes(countryName) && isCountryFavorite(word.name.common),
                 );
 
                 return wordLower.includes(countryName) && isCountryFavorite(word.name.common);
