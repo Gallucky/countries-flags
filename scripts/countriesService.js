@@ -2,7 +2,9 @@ import { isCountryFavorite } from "./localStorageService.js";
 
 const getCountries = async () => {
     try {
-        const res = await fetch("https://restcountries.com/v3.1/all?fields=name,flags");
+        const res = await fetch(
+            "https://restcountries.com/v3.1/all?fields=name,flags,region,population",
+        );
         return await res.json();
     } catch (error) {
         console.log(error);
