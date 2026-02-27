@@ -1,0 +1,103 @@
+.custom-select {
+    position: relative;
+    width: fit-content;
+    font-family: system-ui;
+
+    background: none;
+    border: none;
+
+    * {
+        user-select: none;
+    }
+}
+
+.select-value {
+    padding: 5px 30px 5px 10px;
+    margin: -5px -30px -5px -10px;
+    /* border: 123px solid #ccc; */
+    border-radius: 4px;
+    cursor: url("../../../../images/cursor-click_24x24.png"), pointer;
+    position: relative;
+}
+
+.custom-select .select-value::after {
+    width: 24px;
+    height: 24px;
+
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 10%;
+
+    background-image: url("../images/icons8-expand-arrow-24.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    transition: background-image 0.5s ease-in-out;
+}
+
+.custom-select.active .select-value::after {
+    background-image: url("../images/icons8-collapse-arrow-24.png");
+}
+
+.select-options {
+    max-height: 200px;
+
+    /* display: none; */
+    margin-top: 2px;
+
+    position: absolute;
+    top: 120%;
+    right: 0;
+
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+
+    overflow-y: hidden;
+    z-index: 1000;
+
+    transition: all 0.5s ease-in-out;
+}
+
+/* Show options when active class is present */
+.custom-select.active .select-options {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.select-value {
+    background: teal;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 3px groove black;
+    border-radius: 8px;
+    color: white;
+}
+
+.select-options {
+    background: teal;
+    border: 3px groove black;
+    border-radius: 8px;
+    color: white;
+
+    .select-option {
+        padding: 5px 10px;
+        user-select: none;
+    }
+
+    .select-option.selected {
+        color: black;
+        font-weight: 500;
+    }
+
+    .select-option:hover {
+        background-color: transparent;
+        color: white;
+        font-weight: 500;
+    }
+}

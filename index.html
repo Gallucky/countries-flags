@@ -3,41 +3,87 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Leading You Forward</title>
-        <link rel="stylesheet" href="./leading_you_forward_style.css" />
+        <title>Countries Project</title>
 
-        <!-- Heebo font support -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Bootstrap link -->
         <link
-            href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap"
-            rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Half Background -->
-        <!--
-            I don't have to put a img tag here because the
-            following element is a background and the background
-            image is not important to specify.*
-        -->
-        <div class="bg-img"></div>
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous" />
+        <!-- Font Awesome Link -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-        <!-- Content -->
-        <div class="content">
-            <div class="content-wrapper">
-                <h1>תן לנו להוביל אותך קדימה</h1>
-                <p>
-                    לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא מקום” בעת
-                    עריכ.
-                </p>
-                <form action="" id="info-form">
-                    <label for="full-name">שם מלא</label>
-                    <input type="text" id="full-name" required />
-                    <label for="email">דוא״ל</label>
-                    <input type="email" id="email" required />
-                    <input type="submit" id="submit-btn" value="שליחה" />
-                </form>
-            </div>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="../../../styles/globals/general.css" />
+        <link rel="stylesheet" href="./styles/general_styling.css" />
+        <script src="./scripts/index.js" type="module" defer></script>
+
+        <link rel="stylesheet" href="./styles/custom_select.css" />
+        <script src="./scripts/customSelect.js" defer></script>
+
+        <link rel="stylesheet" href="./styles/checkbox.css" />
+    </head>
+    <body class="bg-dark">
+        <!-- Title -->
+        <div class="bg-primary">
+            <h1 class="text-center text-white p-4">מדינות העולם</h1>
         </div>
+
+        <!-- Search -->
+        <h4 class="text-center text-white">חיפוש</h4>
+        <div class="m-auto mt-1 d-flex justify-content-center col-md-6 col-sm-12">
+            <input id="search-input" class="form-control m-4" />
+
+            <label id="show-favorites" class="ios-checkbox red m-auto">
+                <input type="checkbox" />
+                <div class="checkbox-wrapper">
+                    <div class="checkbox-bg"></div>
+                    <svg fill="none" viewBox="0 0 24 24" class="checkbox-icon">
+                        <path
+                            stroke-linejoin="round"
+                            stroke-linecap="round"
+                            stroke-width="3"
+                            stroke="currentColor"
+                            d="M4 12L10 18L20 6"
+                            class="check-path"></path>
+                    </svg>
+                </div>
+            </label>
+
+            <div class="select-area">
+                <label for="search-sort">מיין לפי:</label>
+                <div id="search-sort" class="custom-select" data-value="without">
+                    <div class="select-value">ללא</div>
+                    <div class="select-options">
+                        <div class="select-option selected" data-value="without">ללא</div>
+                        <div class="select-option" data-value="name">שם</div>
+                        <div class="select-option" data-value="population">אוכלוסייה</div>
+                        <div class="select-option" data-value="region">איזור</div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btn-sort" data-order-type="asc"></button>
+        </div>
+
+        <!-- Cards -->
+        <div id="cards-container" class="container d-flex flex-wrap justify-content-center"></div>
+
+        <!-- Bootstrap scripts -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
     </body>
 </html>
